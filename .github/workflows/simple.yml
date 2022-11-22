@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo a string 
-        run: eccho "Hello Crutch"
+        run: echo "Hello Crutch"
       - name: Multiline Commands
         run: |
           npm -v
