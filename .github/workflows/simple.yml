@@ -11,4 +11,9 @@ jobs:
       - name: Multiline Commands
         run: |
           npm -v
-          node -v
+          node -
+      - name: Python Command 
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
