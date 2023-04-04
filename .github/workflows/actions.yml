@@ -3,10 +3,17 @@ name: Actions Workflow
 on: [push]
 
 jobs:
-  run-github-actions: 
-    runs-on: ubuntu-latest
+  Run-Smoke-Test:
+    runs-on: windows-latest
     env:
       TEST_TENANT_INFO: ${{ secrets.TEST_TENANT_INFO }}
+    steps:
+      - name: Tell Secrets
+        run: |
+          echo $env:TEST_TENANT_INFO
+          
+  run-github-actions: 
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 
         uses: actions/checkout@v1
@@ -21,6 +28,4 @@ jobs:
           who-to-greet: Crutch 
       - name: Log Greet time
         run: echo "${{ steps.greet.outputs.time}}"
-      - name: Tell Secrets
-        run: |
-          echo $env:TEST_TENANT_INFO
+
