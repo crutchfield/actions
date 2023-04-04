@@ -11,6 +11,8 @@ jobs:
       - name: Tell Secrets
         run: |
           echo $env:TEST_TENANT_INFO
+          $Info = ConvertFrom-Json $env:TEST_TENANT_INFO
+          $Info
           
   run-github-actions: 
     runs-on: ubuntu-latest
