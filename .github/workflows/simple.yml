@@ -23,4 +23,6 @@ jobs:
           with:
              inlineScript: |
                Get-AzResourceGroup
+               $Token = Get-AzAccessToken -ResourceTypeName KeyVault
+               $Token
              azPSVersion: "latest"
