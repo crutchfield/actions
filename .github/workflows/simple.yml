@@ -22,6 +22,8 @@ jobs:
           uses: azure/powershell@v1
           with:
              inlineScript: |
+               dotnet --version
+               dotnet tool install --global AzureSignTool --version 4.0.1 
                Get-AzResourceGroup
                $Token = Get-AzAccessToken -ResourceTypeName KeyVault
                $Token
