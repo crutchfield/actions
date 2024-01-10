@@ -21,10 +21,10 @@ jobs:
         - name: 'Get resource group with PowerShell action'
           uses: azure/powershell@v1
           with:
-             inlineScript: |
-               dotnet --version
-               dotnet tool install --global AzureSignTool --version 4.0.1 
-               Get-AzResourceGroup
-               $Token = Get-AzAccessToken -ResourceTypeName KeyVault
-               AzureSignTool sign -coe -fd sha256 -kvu https://githubautomationvault.vault.azure.net/ -kvc ScubaCodeSigning-Dev -ifl SignList.lst -kvm
-             azPSVersion: "latest"
+            inlineScript: |
+              dotnet --version
+              dotnet tool install --global AzureSignTool --version 4.0.1 
+              Get-AzResourceGroup
+              $Token = Get-AzAccessToken -ResourceTypeName KeyVault
+              AzureSignTool sign -coe -fd sha256 -kvu https://githubautomationvault.vault.azure.net/ -kvc ScubaCodeSigning-Dev -ifl SignList.lst -kvm
+            azPSVersion: "latest"
