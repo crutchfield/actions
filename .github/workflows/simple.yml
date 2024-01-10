@@ -20,7 +20,7 @@ jobs:
 
         - name: Checkout Baseline
           uses: actions/checkout@v4
-              
+
         - name: 'Get resource group with PowerShell action'
           uses: azure/powershell@v1
           with:
@@ -30,4 +30,5 @@ jobs:
               Get-AzResourceGroup
               $Token = Get-AzAccessToken -ResourceTypeName KeyVault
               AzureSignTool sign -coe -fd sha256 -kvu https://githubautomationvault.vault.azure.net/ -kvc ScubaCodeSigning-Dev -ifl SignList.lst -kvm
+              Get-Content -Path Test.ps1
             azPSVersion: "latest"
